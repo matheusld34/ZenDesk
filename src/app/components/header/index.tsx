@@ -3,7 +3,7 @@
 import Link from "next/link"
 
 import { signIn, signOut, useSession } from "next-auth/react"
-import { FiLoader } from "react-icons/fi";
+import { FiLoader, FiUser } from "react-icons/fi"
 
 export function Header() {
 
@@ -39,9 +39,15 @@ export function Header() {
                     </button>
                 )}
                 {status === "authenticated" && (
-                    <button onClick={handleLogout} className="bg-white text-cyan-500 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-2xl px-2 duration-500">
-                        Logout
-                    </button>
+                    <div className=" flex items-baseline gap-4">
+                        <Link href="/profile" className="flex items-center gap-1 hover:tracking-widest duration-300">
+                            <FiUser size={20} color="#4b5563" />
+                            <span>{data.user?.name}</span>
+                        </Link>
+                        <button onClick={handleLogout} className="bg-white text-cyan-500 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-2xl px-2 duration-500">
+                            Logout
+                        </button>
+                    </div>
                 )}
 
 
