@@ -34,12 +34,12 @@ export function Header() {
                     </button>
                 )}
                 {status === "unauthenticated" && (
-                    <button onClick={handleLogin} className="bg-white text-cyan-500 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <button onClick={handleLogin} className="bg-white text-cyan-500 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-2xl px-2 duration-500">
                         Login
                     </button>
                 )}
                 {status === "authenticated" && (
-                    <button onClick={handleLogout} className="bg-white text-cyan-500 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <button onClick={handleLogout} className="bg-white text-cyan-500 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-2xl px-2 duration-500">
                         Logout
                     </button>
                 )}
